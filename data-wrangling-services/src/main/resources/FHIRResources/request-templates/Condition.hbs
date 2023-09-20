@@ -1,0 +1,27 @@
+{
+  "resourceType" : "Condition",
+  "code" : {
+  		"coding" : [{
+  				"system" : "http://hl7.org/fhir/sid/icd-10",
+  				"code" : "{{ icd10Code }}"
+  				}], 
+		"text" : "ICD-10 Codes" 
+  	},
+    "subject" :{
+        "reference"	: "{{ patientResourceUrl }}",
+		"type"	: "Patient",
+		"identifier" : {
+			"value" : "{{ patientResourceIdentifier}}"
+		},
+		"display" : "Patient associated with the condition"
+    },
+    "encounter": {
+        "reference": "{{ encounterResourceUrl}}",
+        "type" :"Encounter",
+        "identifier": {
+            "value": "{{ encounterResourceIdentifier }}"
+        },
+        "display" : "Encounter associated with Patient"
+    }
+}
+  

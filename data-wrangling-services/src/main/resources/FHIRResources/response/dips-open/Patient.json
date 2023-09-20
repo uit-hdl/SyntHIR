@@ -1,0 +1,60 @@
+{
+    "resourceType": "Patient",
+    "id": "cdp2013783",
+    "meta": {
+        "profile": ["DIPSPatient", "NoBasisPatient"]
+    },
+    "identifier": [{
+        "use": "official",
+        "system": "urn:oid:2.16.578.1.12.4.1.4.1",
+        "value": "30081571743"
+    }, {
+        "system": "http://dips.no/fhir/namingsystem/dips-patientid",
+        "value": "2013783"
+    }],
+    "active": true,
+    "name": [{
+        "use": "official",
+        "text": "Testmann, Ole",
+        "family": "Testmann",
+        "given": ["Ole"]
+    }],
+    "gender": "male",
+    "birthDate": "2015-08-30",
+    "deceasedBoolean": false,
+    "address": [{
+        "extension": [{
+            "extension": [{
+                "url": "http://dips.no/fhir/StructureDefinition/R4/DIPSPatientMunicipality",
+                "valueCoding": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.1.3402",
+                    "code": "1902",
+                    "display": "Tromsø"
+                }
+            }],
+            "url": "http://hl7.no/fhir/StructureDefinition/no-basis-propertyinformation"
+        }, {
+            "url": "http://dips.no/fhir/StructureDefinition/R4/DIPSPatientStateName",
+            "valueString": "TROMS FYLKESKOMMUNE"
+        }, {
+            "url": "http://hl7.no/fhir/StructureDefinition/no-basis-address-official",
+            "valueBoolean": false
+        }],
+        "use": "home",
+        "city": "Ramfjordbotn",
+        "district": "Tromsø",
+        "_district": {
+            "extension": [{
+                "url": "http://dips.no/fhir/StructureDefinition/R4/DIPSPatientMunicipality",
+                "valueCoding": {
+                    "system": "urn:oid:2.16.578.1.12.4.1.1.3402",
+                    "code": "1902",
+                    "display": "Tromsø"
+                }
+            }]
+        },
+        "state": "19",
+        "postalCode": "9027",
+        "country": "Norge"
+    }]
+}

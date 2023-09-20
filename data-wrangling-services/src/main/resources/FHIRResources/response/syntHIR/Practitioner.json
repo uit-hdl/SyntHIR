@@ -1,0 +1,16 @@
+{
+    "resourceType": "Practitioner",
+    "id": "896259fd-5c91-44b3-8295-46d8fefb23cd",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-05-10T19:46:19.99+00:00"
+    },
+    "identifier": [
+        {
+            "use": "official",
+            "value": "72225"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1977"
+}

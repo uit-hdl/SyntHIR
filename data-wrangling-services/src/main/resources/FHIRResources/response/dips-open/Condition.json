@@ -1,0 +1,68 @@
+{
+            "resourceType": "Condition",
+            "id": "afn1001283",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative of condition </b></p><p><b>Id:</b> afn1001283</p><p><b>Patient:</b> MINEPASIENTER, MANGE DIAGNOSER</p><p><b>Encounter:</b> Encounter/agy1003401</p><p><b>DiagnoseCode:</b>  </p><p><b>DateRecorded:</b> 2011-11-24</p></div>"
+            },
+            "identifier": [{
+                "system": "http://dips.no/fhir/namingsystem/dips-diagnosisid",
+                "value": "1001283"
+            }],
+            "verificationStatus": {
+                "coding": [{
+                    "code": "Confirmed"
+                }]
+            },
+            "category": [{
+                "coding": [{
+                    "system": "http://hl7.org/fhir/condition-category",
+                    "code": "diagnosis",
+                    "display": "Diagnosis"
+                }, {
+                    "system": "http://hl7.org/fhir/sid/icd-10",
+                    "code": "ICD-10",
+                    "display": "ICD-10"
+                }, {
+                    "system": "http://hl7.no/fhir/condition-sub-category",
+                    "code": "Sub",
+                    "display": "Sub Diagnosis"
+                }]
+            }],
+            "code": {
+                "coding": [{
+                    "system": "urn:oid:2.16.578.1.12.4.1.1.7110",
+                    "code": "A020",
+                    "display": "Salmonellaenteritt"
+                }]
+            },
+            "subject": {
+                "reference": "Patient/cdp2010051",
+                "identifier": {
+                    "system": "http://dips.no/fhir/namingsystem/dips-patientid",
+                    "value": "2010051"
+                },
+                "display": "MINEPASIENTER, MANGE DIAGNOSER"
+            },
+            "encounter": {
+                "reference": "Encounter/agy1003401",
+                "identifier": {
+                    "system": "http://dips.no/fhir/namingsystem/dips-omsorgsepisodeid",
+                    "value": "1003401"
+                }
+            },
+            "recordedDate": "2011-11-24",
+            "asserter": {
+                "reference": "PractitionerRole/agb1001286",
+                "identifier": {
+                    "system": "urn:oid:1.3.6.1.4.1.9038.51.1",
+                    "value": "1001286"
+                },
+                "display": "USER0296, TEST0296, TESTSYKEHUSET HF"
+            }
+        },
+        "search": {
+            "mode": "match"
+        }
+    }
+}

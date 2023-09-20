@@ -1,0 +1,13 @@
+{
+  "resourceType" : "Medication",
+  "identifier" : [{
+			  "value" : "{{ medicationNumber }}" 
+			}], 
+  "code" : { 
+	  "coding" : [{ 
+		  "system" : "http://www.whocc.no/atc", 
+		  "code" : "{{ medicationATCCode }}"
+ 		}], 
+	  "text" : "{{ medicationName }}" 
+ 	}
+}

@@ -1,0 +1,57 @@
+{
+"resourceType" : "Encounter",
+"status" : "{{ levelOfCare }}",
+"class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "{{ levelOfUrgency }}",
+    "display" : "Patient arrival mode for the Encounter"
+},
+"subject"	:	{
+		"reference"	: "{{ patientFullUrl }}",
+		"type"	: "Patient",
+		"identifier" : {
+			"value" : "{{ patientResourceIdentifier}}"
+		},
+		"display" : "Patient Hospitalized"
+},
+"period" : {
+		"start" : "{{ admissionStartDate }}",
+		"end" : "{{ admissionEndDate }}"
+
+}, 
+"length" : {
+    "value" : "{{ hospitalizationVisitLength }}",
+    "unit" : "days"
+},
+"participant" : [{ 
+    "individual" : { 
+		  "reference" : "{{ practitionerResourceUrl }}", 
+		  "type" : "Practitioner", 
+		  "identifier" : {
+			"value" : "{{ practitionerResourceIdentifier}}"
+		},
+		  "display" : "Practitioner Details for the patient hospitalized" 
+ 		}
+}],
+"hospitalization" : { 
+   "dischargeDisposition" : {
+			  "coding" : [{
+					"system" : "http://terminology.hl7.org/CodeSystem/discharge-disposition", 
+					"code" : "{{ fhirCodeForDischargeLocation }}" 
+				}],
+			  "text" : "{{ dischargeLocation }}"
+		   
+		} 	
+  },
+"location" : [{
+		"location" :{
+		  "reference" : "{{ locationResourceUrl }}", 
+		  "type" : "Location", 
+		  "identifier" : {
+			"value" : "{{ LocationResourceIdentifier}}"
+		},
+		"display" : "Institute Name where prescribed" 
+		}
+	}]
+}
+

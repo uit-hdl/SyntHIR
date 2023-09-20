@@ -1,0 +1,33 @@
+{
+    "resourceType": "MedicationDispense",
+    "id": "c2acb894-7b41-40bb-80f6-bab414a585cd",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2023-05-10T19:46:21.897+00:00"
+    },
+    "status": "unknown",
+    "medicationReference": {
+        "reference": "https://synthir-hdl.azurehealthcareapis.com/Medication/046ce473-498a-47dd-b88c-3c689914ee98",
+        "type": "Medication",
+        "display": "Medicationdetailsforthedispense"
+    },
+    "subject": {
+        "reference": "https://synthir-hdl.azurehealthcareapis.com/Patient/0ec5ad03-4395-433e-887c-d97479119bf2",
+        "type": "Patient",
+        "display": "Patientfortheprescription"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "https://synthir-hdl.azurehealthcareapis.com/MedicationRequest/2d879ecf-2e23-40d4-8405-446dc0d2a83e",
+            "type": "MedicationRequest",
+            "display": "PrescriptionfortheMedication"
+        }
+    ],
+    "quantity": {
+        "value": 1000.000
+    },
+    "daysSupply": {
+        "value": 2500.000
+    },
+    "whenHandedOver": "2012-06-30"
+}

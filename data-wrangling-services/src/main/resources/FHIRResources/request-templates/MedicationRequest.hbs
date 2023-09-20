@@ -1,0 +1,68 @@
+{
+  "resourceType" : "MedicationRequest",
+  "identifier" : [{
+  	 	"value" : "{{ prescriptionNumber }}"
+  }],
+  "status" : "unknown",
+  "intent" : "option",
+  "category" : [{
+  			"coding" : [{
+					"code" : "{{ prescriptionCategoryCode }}" 
+				}],
+			"text" : "{{ prescriptionCategory }}"
+  }],
+  "medicationReference" : { 
+			"reference" : "{{ medicationResourceUrl }}",
+			"type"	: "Medication",
+			"identifier" : {
+				"value" : "{{ medicationResourceIdentifier}}"
+			},
+			"display" : "Medications for the prescription"
+ 	},
+  "subject" : { 
+  			"reference" : "{{ patientResourceUrl }}",
+			"type"	: "Patient",
+			"identifier" : {
+				"value" : "{{ patientResourceIdentifier}}"
+			},
+			"display" : "Patient for the prescription"
+   }, 
+  "encounter" : { 
+  			"reference" : "{{ encounterResourceUrl }}",
+			"type"	: "Encounter",
+			"identifier" : {
+				"value" : "{{ encounterResourceIdentifier}}"
+			},
+			"display" : "Encounter associated with the prescription"
+   },
+  "recorder" : { 
+  			"reference" : "{{ practitionerResourceUrl }}",
+			"type"	: "Practitioner",
+			"identifier" : {
+				"value" : "{{ practitionerResourceIdentifier}}"
+			},
+			"display" : "Practitioner who prescribed the prescription"
+   },
+   "note" : [{
+   		"authorString" : "Legal Reimbursement category for the prescription",
+		"text" : "{{ reimbursementLegalCategory }}"
+	},{
+		"authorString" : "Legal Reimbursement code for the prescription",
+		"text" : "{{ reimbursementLegalCategoryCode }}"   
+   },{
+   		"authorString" : "Reimbursement code for the prescription - ICD/ICPC",
+		"text" : "{{ reimbursementIcdIcpcCode }}"   
+   }],
+   "dosageInstruction" : [{
+   			"text" : "Defined daily dose of the drug",
+   			"doseAndRate" : [{
+   				"doseQuantity" : {
+   						"value" : "{{ prescriptionDrugDosage }}",
+   						"unit" : "{{ prescriptionDrugDosageUnit }}"
+   				},
+   				"rateQuantity" : {	
+   						"unit" : "Per Day"
+   				}
+   			}]
+   }]
+}

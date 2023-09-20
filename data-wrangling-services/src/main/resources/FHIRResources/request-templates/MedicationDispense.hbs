@@ -1,0 +1,36 @@
+{
+	"resourceType" : "MedicationDispense",
+	"status" : "unknown",
+    "subject" : { 
+  			"reference" : "{{ patientResourceUrl }}",
+			"type"	: "Patient",
+			"identifier" : {
+				"value" : "{{ patientResourceIdentifier}}"
+			},
+			"display" : "Patient for the prescription"
+   },
+   "medicationReference" : {
+   			"reference" : "{{ medicationResourceUrl }}",
+            "type" : "Medication",
+			"identifier" : {
+				"value" : "{{ medicationResourceIdentifier}}"
+			},
+            "display" : "Medication details for the dispense"
+             
+   },
+	"authorizingPrescription" : [{ 
+			"reference" : "{{ medicationRequestResourceUrl }}",
+			"type"	: "MedicationRequest",
+			"identifier" : {
+				"value" : "{{ medicationRequestResourceIdentifier}}"
+			},
+			"display" : "Prescription for the Medication"
+ 	}],
+	"quantity" : {
+		  "value" : "{{ medicationPackagesDispensed }}"
+		},
+	"daysSupply" : {
+		  "value" : "{{ dddMedicationPackagesDispensed }}" 
+		},
+	"whenHandedOver" : "{{ dayYearOfDispense }}"
+}

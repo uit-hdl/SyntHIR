@@ -1,0 +1,23 @@
+{
+	"resourceType" : "Patient",
+	"identifier" : [{
+			  "use" : "{{ identifierUse }}", 
+			  "value" : "{{ identifierValue }}"
+			}],
+	"gender" : "{{ gender }}",
+	"birthDate" : "{{ dateOfBirth }}",
+	"deceasedDateTime" : "{{ deathDateTime }}",
+	"address" : [{
+			  "use" : "{{ address.addressUse }}", 
+			  "type" : "{{ address.type }}",
+			  "text" : "{{ address.addressText }}", 
+			  "city" : "{{ address.addressCity }}", 
+			  "district" : "{{ address.addressDistrict }}", 
+			  "state" : "{{ addressState }}", 
+			  "postalCode" : "{{ address.addressPostalCode }}", 
+			  "country" : "{{ address.addressCountry }}" 
+	}],
+	"extension": [{
+	      		"valueString": "{{ ageGroup }}"
+	}]
+}

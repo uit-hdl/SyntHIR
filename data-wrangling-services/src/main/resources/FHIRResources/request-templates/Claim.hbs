@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Claim",
+  "status" : "draft",
+  "type" : {
+  		"coding" : {
+					"system" : "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code" : "professional",
+					"display" : "" 
+				},
+		"text" : "Claim is for a prescription"
+  },
+  "subType" : {
+  		"coding" : {
+					"code" : "{{ legalReimbursementCategoryCode }}",
+					"display" : "{{ legalReimbursementCategory }}" 
+				},
+		"text" : "Legal Reimbursement Category of prescription"
+  },
+  "use" : "claim",
+  "patient" : {
+		"reference"	: "",
+		"type"	: "Patient",
+		"display" : "Patient Hospitalized"
+    },
+  "created" : "{{ resourceCreatedDateTime }}",
+  "provider" : { 
+		  "reference" : "", 
+		  "type" : "Practitioner", 
+		  "display" : "Practitioner Details for the patient hospitalized" 
+ 	},
+ 	"priority" :{
+ 		"coding" : {
+				"system" : "http://terminology.hl7.org/CodeSystem/processpriority",
+                "code" : "normal",
+				"display" : "" 
+			},
+	"text" : "Priority associated with claim"
+   },
+   "supportingInfo" : [{
+  		"code" : {
+  			"coding" : [{
+  					"code" : "{{ icdCodeReimbursement}}"
+  				}],
+  			"text" : "ICD Codes for Reimbursement"
+  		}
+  },{
+  		"code" : {
+  			"coding" : [{
+  					"code" : "{{ icpcCodeReimbursement}}"
+  				}],
+  			"text" : "ICPC Codes for Reimbursement"
+  		}
+  }],
+  "prescription" : { 
+			"reference" : "{{ medicationRequestResourceUrl }}",
+			"type"	: "MedicationRequest",
+			"display" : "Prescription for which claim is request"
+ 	},
+  "insurance" : {
+        "sequence" : 1,
+        "focal" : true,
+        "coverage" : {
+            "reference" : "", 
+            "type" : "Coverage", 
+            "display" : "Details about insurance plan" 
+        }
+    }
+}
